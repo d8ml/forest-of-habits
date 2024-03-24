@@ -15,8 +15,8 @@ import java.util.List;
 @Service
 public class TreeServiceImpl implements TreeService {
 
-    private ForestRepository forestRepository;
-    private TreeRepository treeRepository;
+    private final ForestRepository forestRepository;
+    private final TreeRepository treeRepository;
 
     @Override
     public List<TreeDTO> getAllByForestId(Long forestId) {

@@ -2,8 +2,6 @@ package hh.forest_of_habits.mapper;
 
 import hh.forest_of_habits.dto.TreeDTO;
 import hh.forest_of_habits.entity.Tree;
-import hh.forest_of_habits.enums.TreePeriod;
-import hh.forest_of_habits.enums.TreeType;
 
 import java.time.LocalDateTime;
 
