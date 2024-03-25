@@ -1,17 +1,18 @@
 package hh.forest_of_habits.service;
 
-import hh.forest_of_habits.dto.TreeDTO;
+import hh.forest_of_habits.dto.TreeFullDto;
+import hh.forest_of_habits.dto.TreeShortDto;
 
 import java.util.List;
 
 public interface TreeService {
-    List<TreeDTO> getAllByForestId(Long forestId);
+    List<TreeShortDto> getAllByForestId(Long forestId);
 
-    TreeDTO getById(Long id);
+    TreeFullDto getById(Long id);
 
-    TreeDTO create(TreeDTO forest);
+    TreeShortDto create(TreeShortDto forest);
 
-    TreeDTO update(Long id, TreeDTO forest);
+    TreeShortDto update(Long id, TreeShortDto forest);
 
     void delete(Long id);
 }

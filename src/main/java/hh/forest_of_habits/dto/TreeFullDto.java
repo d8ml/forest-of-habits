@@ -9,12 +9,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Data
-public class TreeDTO {
+public class TreeFullDto {
     private Long id;
     private String name;
     private String description;
@@ -25,4 +26,5 @@ public class TreeDTO {
     private Integer limit;
     @JsonProperty("forest_id")
     private Long forestId;
+    private List<IncrementationDto> increments;
 }
