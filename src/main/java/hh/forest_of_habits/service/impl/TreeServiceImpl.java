@@ -1,9 +1,11 @@
 package hh.forest_of_habits.service.impl;
 
+import hh.forest_of_habits.dto.IncrementationDto;
 import hh.forest_of_habits.dto.TreeFullDto;
 import hh.forest_of_habits.dto.TreeShortDto;
 import hh.forest_of_habits.entity.Incrementation;
 import hh.forest_of_habits.exception.NotFoundException;
+import hh.forest_of_habits.mapper.IncrementationMapper;
 import hh.forest_of_habits.mapper.TreeMapper;
 import hh.forest_of_habits.repository.ForestRepository;
 import hh.forest_of_habits.repository.IncrementationRepository;
@@ -67,5 +69,14 @@ public class TreeServiceImpl implements TreeService {
             throw new NotFoundException(String.format("Дерево с id = %d не найдено", id));
         }
         forestRepository.deleteById(id);
+    }
+
+    @Override
+    public TreeFullDto addIncrementation(IncrementationDto dto, Long treeId) {
+        if (treeRepository.existsById(treeId)) {
+            throw new NotFoundException(String.format("Дерево с id = %d не найдено", treeId));
+        }
+        incrementationRepository.save(IncrementationMapper.toModel(dto, treeId));
+        return getById(treeId);
     }
 }

@@ -1,5 +1,6 @@
 package hh.forest_of_habits.controller;
 
+import hh.forest_of_habits.dto.IncrementationDto;
 import hh.forest_of_habits.dto.TreeFullDto;
 import hh.forest_of_habits.dto.TreeShortDto;
 import hh.forest_of_habits.service.TreeService;
@@ -22,6 +23,11 @@ public class TreeController {
     @PostMapping
     TreeShortDto create(@RequestBody TreeShortDto dto) {
         return treeService.create(dto);
+    }
+
+    @PostMapping("/{id}")
+    TreeFullDto addIncrementation(@RequestBody IncrementationDto dto, @PathVariable Long id) {
+        return treeService.addIncrementation(dto, id);
     }
 
     @GetMapping("/{id}")

@@ -1,5 +1,6 @@
 package hh.forest_of_habits.service;
 
+import hh.forest_of_habits.dto.IncrementationDto;
 import hh.forest_of_habits.dto.TreeFullDto;
 import hh.forest_of_habits.dto.TreeShortDto;
 
@@ -15,4 +16,6 @@ public interface TreeService {
     TreeShortDto update(Long id, TreeShortDto forest);
 
     void delete(Long id);
+
+    TreeFullDto addIncrementation(IncrementationDto dto, Long treeId);
 }
